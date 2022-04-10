@@ -1,14 +1,18 @@
 module.exports = {
-  siteMetadata: {
-    title: `my first gatsby blog`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  plugins: ["gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    siteMetadata: {
+        title: `my first gatsby blog`,
+        siteUrl: `https://www.yourdomain.tld`
     },
-    __key: "pages"
-  }]
+    plugins: [
+        'gatsby-plugin-image',
+        'gatsby-plugin-sharp',
+        'gatsby-plugin-mdx',
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: `blog`,
+                path: `${__dirname}/blog`
+            }
+        }
+    ]
 };
