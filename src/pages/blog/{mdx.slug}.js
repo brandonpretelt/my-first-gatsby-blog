@@ -2,6 +2,7 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
 import Layout from '../../components/layout';
 
 
@@ -9,6 +10,7 @@ const Post = ({data}) => {
     const image = getImage(data.mdx.frontmatter.hero_image);
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
+                <Link to="/blog"> {"<"} go back</Link>
             <p>{data.mdx.frontmatter.date}</p>
                
                 <GatsbyImage 
